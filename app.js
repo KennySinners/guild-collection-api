@@ -14,18 +14,23 @@ const {
     Guild
 } = require('discord.js');
 
+
+        
+
+
 class Info extends Guild {
 
     constructor(client, data) {
         super(client, data)
-    }
+        }
 
 
     getGuild(id) {
         /**
-         * @param {String}
+         * @param {String} id 
          * @type {Collection}
          */
+       
         this.guild = this.client.guilds.get(id);
 
         if (!id) {
@@ -41,7 +46,7 @@ class Info extends Guild {
 
     getOwner(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -59,7 +64,7 @@ class Info extends Guild {
 
     getGuildInfo(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -77,7 +82,7 @@ class Info extends Guild {
 
     getOwnerInfo(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -95,7 +100,7 @@ class Info extends Guild {
 
     getChannelsByType(id, type) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -117,7 +122,7 @@ class Info extends Guild {
 
     getAllChannelsByObject(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -135,7 +140,7 @@ class Info extends Guild {
 
     getAllChannelsByName(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -153,7 +158,7 @@ class Info extends Guild {
 
     getAllChannelsByID(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -171,7 +176,7 @@ class Info extends Guild {
 
     getAllChannelsWithTimeout(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -191,7 +196,7 @@ class Info extends Guild {
 
     getAllNSFWChannels(id) {
         /**
-         * @param {String}
+         * @param {String} id
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
