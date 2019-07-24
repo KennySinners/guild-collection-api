@@ -1,18 +1,5 @@
-const {
-    guildCollection,
-    ownerCollection,
-    detailedGuildCollection,
-    detailedOwnerCollection,
-    ChannelsCollectionByType,
-    AllChannelsByObjCollection,
-    AllChannelsByName,
-    AllChannelsByID,
-    AllChannelsWithTimeout,
-    AllNSFWChannels
-} = require("./collections");
-const {
-    Guild
-} = require('discord.js');
+const { guildCollection, ownerCollection, detailedGuildCollection, detailedOwnerCollection, ChannelsCollectionByType, AllChannelsByObjCollection, AllChannelsByName, AllChannelsByID, AllChannelsWithTimeout, AllNSFWChannels } = require("./collections");
+const { Guild } = require('discord.js');
 
 
         
