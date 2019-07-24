@@ -1,15 +1,22 @@
-const { guildCollection, ownerCollection, detailedGuildCollection, detailedOwnerCollection, ChannelsCollectionByType, AllChannelsByObjCollection, AllChannelsByName, AllChannelsByID, AllChannelsWithTimeout, AllNSFWChannels } = require("./collections");
+const {
+    guildCollection,
+    ownerCollection,
+    detailedGuildCollection,
+    detailedOwnerCollection,
+    ChannelsCollectionByType,
+    AllChannelsByObjCollection,
+    AllChannelsByName,
+    AllChannelsByID,
+    AllChannelsWithTimeout,
+    AllNSFWChannels
+} = require("./collections");
 const { Guild } = require('discord.js');
-
-
-        
-
 
 class Info extends Guild {
 
     constructor(client, data) {
         super(client, data)
-        }
+    }
 
 
     getGuild(id) {
@@ -17,7 +24,7 @@ class Info extends Guild {
          * @param {String} id 
          * @type {Collection}
          */
-       
+
         this.guild = this.client.guilds.get(id);
 
         if (!id) {
@@ -138,7 +145,7 @@ class Info extends Guild {
             throw new Error("Client was not able to find the specified guild ID")
         } else {
 
-            AllChannelsByName.set(this.guild.id, this.guild.channels.forEach(ch => ch.name))
+            AllChannelsByName.set(this.guild.id, this.channels.forEach(ch => ch.name))
             return AllChannelsByName;
         }
     }
