@@ -145,7 +145,7 @@ class Info extends Guild {
             throw new Error("Client was not able to find the specified guild ID")
         } else {
 
-            AllChannelsByName.set(this.guild.id, this.channels.forEach(ch => ch.name))
+            AllChannelsByName.set(this.guild.id, this.guild.channels.map(c => c.name))
             return AllChannelsByName;
         }
     }
@@ -163,7 +163,7 @@ class Info extends Guild {
             throw new Error("Client was not able to find the specified guild ID")
         } else {
 
-            AllChannelsByID.set(this.guild.id, this.guild.channels.forEach(ch => ch.id))
+            AllChannelsByID.set(this.guild.id, this.guild.channels.map(ch => ch.id))
             return AllChannelsByID;
         }
     }
@@ -183,7 +183,7 @@ class Info extends Guild {
             return "Couldn't find any guild with a timeout."
         } else {
 
-            AllChannelsWithTimeout.set(this.guild.id, this.guild.channels.forEach(c => c.type === "text" || c.type === "news" && c.rateLimitPerUser > 0))
+            AllChannelsWithTimeout.set(this.guild.id, this.guild.channels.map(c => c.type === "text" || c.type === "news" && c.rateLimitPerUser > 0))
             return AllChannelsWithTimeout;
         }
     }
