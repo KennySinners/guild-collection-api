@@ -73,7 +73,7 @@ const { Info } = require("guild-collection-api");
 
 new Info(client).getAllChannelsByName("603009265346805760").forEach(c => {
   JSON.strinigify(c, (err, data) => {
-    message.channel.send(c.join("\n")) //Outputs all the collections in a new line
+    message.channel.send(c.join("\n")) //Outputs all the collections. Each of which is in a new line
   })
 })
 ```
