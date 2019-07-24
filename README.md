@@ -64,7 +64,7 @@ console.log(new Info(bot).getChannelsByType("603009265346805760", "text"))
 
 
 
-**Sending a message that contains the collection**
+**Sending the collection in a discord message**
 
 ```js
 const Discord = require("discord.js");
