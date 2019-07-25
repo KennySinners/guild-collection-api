@@ -1,13 +1,14 @@
-const guildCollection = new Map();
-const ownerCollection = new Map();
-const detailedGuildCollection = new Map();
-const detailedOwnerCollection = new Map();
-const ChannelsCollectionByType = new Map();
-const AllChannelsByObjCollection = new Map();
-const AllChannelsByName = new Map();
-const AllChannelsByID = new Map();
-const AllChannelsWithTimeout = new Map();
-const AllNSFWChannels = new Map();
+const { Collection } = require("discord.js");
+const guildCollection = new Collection();
+const ownerCollection = new Collection();
+const detailedGuildCollection = new Collection();
+const detailedOwnerCollection = new Collection();
+const ChannelsCollectionByType = new Collection();
+const AllChannelsByObjCollection = new Collection();
+const AllChannelsByName = new Collection();
+const AllChannelsByID = new Collection();
+const AllChannelsWithTimeout = new Collection();
+const AllNSFWChannels = new Collection();
 
 module.exports = {
     guildCollection,
