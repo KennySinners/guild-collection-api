@@ -61,3 +61,19 @@ console.log(new Info(bot).getChannelsByType("603009265346805760", "text"))
 * Otherwise it won't work and will throw an error.
 */
 ```
+
+
+
+**Sending the collection in a discord message**
+
+```js
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const { Info } = require("guild-collection-api");
+
+new Info(client).getAllChannelsByName("603009265346805760").forEach(c => {
+  JSON.strinigify(c, (err, data) => {
+    message.channel.send(c.join("\n")) //Outputs all the collections. Each of which is in a new line
+  })
+})
+```
