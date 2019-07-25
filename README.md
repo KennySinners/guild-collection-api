@@ -1,6 +1,6 @@
 Guilds-Collection-API
 
-An API to make your life simpler with getting guilds.
+An API to make your life simpler with getting guilds and their props.
 
 How our API works:
 
@@ -18,8 +18,8 @@ Functions you can use with our API:
 /**
 *~ getGuild (by the provided guild ID)
 *~ getOwner (by the provided guild ID)
-*~ getGuildInfo (by the provided guild ID, returns the full guild Object)
-*~ getOwnerInfo (by the provided guild ID, returns the full owner user Object)
+*~ getGuildInfo (by the provided guild ID, returns the full guild Object) [REPLACED]
+*~ getOwnerInfo (by the provided guild ID, returns the full owner user Object) [REPLACED]
 *~ getChannelsByType (by the provided guild ID and provided channel type) -- [E.g. -> "text"]
 *~ getAllChannelsByObject (by the provided guild ID, returns every channel by their object)
 *~ getAllChannelsByName (by the provided guild ID, returns every channel by it's name)
@@ -46,6 +46,19 @@ console.log(new Info(client).getGuild("603009265346805760"))
 */
 ```
 
+~ getGuild (extended):
+
+```js
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const { Info } = require("guild-collections-api");
+
+console.log(new Info(client).getGuild("603009265346805760", true)) 
+//Passing a boolean maps it by name + member count, if it's true, it'll return with the name, if it's false or not included, it'll return the object
+
+//Warning: BOOLEANS CAN NOT BE USED IN FUNCTIONS THAT RETURN OBJECTS ONLY
+```
+
 
 ~ getChannelsByType
 
@@ -59,12 +72,14 @@ console.log(new Info(bot).getChannelsByType("603009265346805760", "text"))
 /*
 * In the 'getChannelsByType' function you have to provide 2 paramaters, the guild ID and the channel type.
 * Otherwise it won't work and will throw an error.
+* Side note: Passing a boolean after 'type' will result in it mapping the channels by name
 */
 ```
 
 
-
-**Sending the collection in a discord message**
+```js
+/*[REPLACED]
+ **Sending the collection in a discord message**
 
 ```js
 const Discord = require("discord.js");
@@ -76,4 +91,5 @@ new Info(client).getAllChannelsByName("603009265346805760").forEach(c => {
     message.channel.send(c.join("\n")) //Outputs all the collections. Each of which is in a new line
   })
 })
+*/
 ```
