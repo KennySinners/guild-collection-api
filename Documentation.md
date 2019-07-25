@@ -4,7 +4,7 @@
 
 - [x] Adding an option for booleans to be implemented so the API knows what to return
 - [x] Noob-friendly examples
-- [] Getting each member in a specific guild
+- [ ] Getting each member in a specific guild
 
 
 ### All our functions sorted by what they return
@@ -13,24 +13,24 @@
 
 Object returns |
 ---------------|
-getGuild [x] Boolean (Don't use if object wanted as a return) |
-getOwner [x] Boolean (Don't use if object wanted as a return) |
-getChannelsByType [x] Boolean (Don't use if object wanted as a return) |
-getAllChannelsByObject [] Boolean |
-getAllNSFWChannels [x] Boolean (Don't use if object wanted as a return) |
+getGuild [✔] Boolean (Don't use if object wanted as a return) |
+getOwner [✔] Boolean (Don't use if object wanted as a return) |
+getChannelsByType [✔] Boolean (Don't use if object wanted as a return) |
+getAllChannelsByObject [❌] Boolean |
+getAllNSFWChannels [✔] Boolean (Don't use if object wanted as a return) |
 
 
 ##### Functions that return Names/IDs
 
 Name / ID returns |
 ------------------|
-getGuild [x] Boolean (Use if name/id wanted as a return) |
-getOwner [x] Boolean (Use if name/id wanted as a return) |
-getChannelsByType [x] Boolean (Use if name/id wanted as a return) |
-getAllChannelsByName [] Boolean |
-getAllChannelsByID [] Boolean | 
-getAllChannelsWithTimeout [x] Boolean (Use if name/id wanted as a return) |
-getAllNSFWChannels [x] Boolean (Use if name/id wanted as a return) |
+getGuild [✔] Boolean (Use if name/id wanted as a return) |
+getOwner [✔] Boolean (Use if name/id wanted as a return) |
+getChannelsByType [✔] Boolean (Use if name/id wanted as a return) |
+getAllChannelsByName [❌] Boolean |
+getAllChannelsByID [❌] Boolean | 
+getAllChannelsWithTimeout [✔] Boolean (Use if name/id wanted as a return) |
+getAllNSFWChannels [✔] Boolean (Use if name/id wanted as a return) |
 
 
 
