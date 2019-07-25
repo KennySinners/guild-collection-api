@@ -2,7 +2,7 @@
 
 ##### What our new API includes/doesn't include:
 
-- [x] Adding an option for booleans to be implemented so the API knows what to return
+- [x] Adding an option for booleans to be implemented so the API returns are simplified
 - [x] Noob-friendly examples
 - [ ] Getting each member in a specific guild
 
