@@ -1,8 +1,6 @@
 const {
     guildCollection,
     ownerCollection,
-    detailedGuildCollection,
-    detailedOwnerCollection,
     ChannelsCollectionByType,
     AllChannelsByObjCollection,
     AllChannelsByName,
