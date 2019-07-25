@@ -122,6 +122,7 @@ class Info extends Guild {
     getAllChannelsByName(id, asmsg) {
         /**
          * @param {String} id
+         * @param {Boolean} asmsg
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -149,6 +150,7 @@ class Info extends Guild {
     getAllChannelsByID(id, asmsg) {
         /**
          * @param {String} id
+         * @param {Boolean} asmsg
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
@@ -207,6 +209,7 @@ class Info extends Guild {
     getAllNSFWChannels(id, asmsg) {
         /**
          * @param {String} id
+         * @param {Boolean} asmsg
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
