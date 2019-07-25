@@ -77,19 +77,8 @@ console.log(new Info(bot).getChannelsByType("603009265346805760", "text"))
 ```
 
 
-```js
-/*[REPLACED]
- **Sending the collection in a discord message**
+You can find our extended documentation in our ~~[github repo](https://github.com/KennySinners/guild-collection-api/blob/master/Documentation.md)~~
 
-```js
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const { Info } = require("guild-collection-api");
+Working link:
 
-new Info(client).getAllChannelsByName("603009265346805760").forEach(c => {
-  JSON.strinigify(c, (err, data) => {
-    message.channel.send(c.join("\n")) //Outputs all the collections. Each of which is in a new line
-  })
-})
-*/
-```
+https://github.com/KennySinners/guild-collection-api/blob/master/Documentation.md
