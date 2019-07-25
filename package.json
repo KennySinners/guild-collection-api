@@ -1,6 +1,6 @@
 {
   "name": "guild-collections-api",
-  "version": "1.2.5",
+  "version": "1.3.3",
   "description": "Gets every info about the guild in a collection",
   "main": "app.js",
   "scripts": {
