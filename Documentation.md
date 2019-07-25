@@ -16,7 +16,7 @@ Object returns |
 getGuild [✔] Boolean (Don't use if object wanted as a return) |
 getOwner [✔] Boolean (Don't use if object wanted as a return) |
 getChannelsByType [✔] Boolean (Don't use if object wanted as a return) |
-getAllChannelsByObject [❌] Boolean |
+getAllChannelsByObject [X] Boolean |
 getAllNSFWChannels [✔] Boolean (Don't use if object wanted as a return) |
 
 
@@ -27,8 +27,8 @@ Name / ID returns |
 getGuild [✔] Boolean (Use if name/id wanted as a return) |
 getOwner [✔] Boolean (Use if name/id wanted as a return) |
 getChannelsByType [✔] Boolean (Use if name/id wanted as a return) |
-getAllChannelsByName [❌] Boolean |
-getAllChannelsByID [❌] Boolean | 
+getAllChannelsByName [X] Boolean |
+getAllChannelsByID [X] Boolean | 
 getAllChannelsWithTimeout [✔] Boolean (Use if name/id wanted as a return) |
 getAllNSFWChannels [✔] Boolean (Use if name/id wanted as a return) |
 
