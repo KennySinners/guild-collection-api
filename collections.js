@@ -9,6 +9,11 @@ const AllChannelsByName = new Collection();
 const AllChannelsByID = new Collection();
 const AllChannelsWithTimeout = new Collection();
 const AllNSFWChannels = new Collection();
+const AllMembers = new Collection();
+const AllMembersByDisplayName = new Collection();
+const AllMembersByID = new Collection();
+const AllMemberRoles = new Collection();
+const AllGuildRoles = new Collection();
 
 module.exports = {
     guildCollection,
@@ -20,5 +25,10 @@ module.exports = {
     AllChannelsByName,
     AllChannelsByID,
     AllChannelsWithTimeout,
-    AllNSFWChannels
+    AllNSFWChannels,
+    AllMembers,
+    AllMembersByDisplayName,
+    AllMembersByID,
+    AllMemberRoles,
+    AllGuildRoles
 }
