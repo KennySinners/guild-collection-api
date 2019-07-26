@@ -6,7 +6,15 @@ const {
     AllChannelsByName,
     AllChannelsByID,
     AllChannelsWithTimeout,
-    AllNSFWChannels
+    AllNSFWChannels,
+    AllMembers,
+    AllMembersByDisplayName,
+    AllMembersByID,
+    AllMemberRoles,
+    AllGuildRoles,
+    AllGuildRolesByName,
+    AllGuildRolesByID,
+    AllGuildRolesByHexColor
 } = require("./collections");
 const {
     Guild,
@@ -40,7 +48,7 @@ class Info extends Guild {
             if (!asmsg || asmsg === false) {
                 return guildCollection.map(gld => gld)
             } else {
-                return guildCollection.map(gl => gl.name + " | Member Count: " + gl.memberCount)
+                return guildCollection.map(gl => gl.map(x => x.id + " | Member Count: " + x.memberCount))
             }
         }
     }
@@ -63,7 +71,7 @@ class Info extends Guild {
 
             if (!asmsg || asmsg === false) {
                 return ownerCollection;
-            } else { 
+            } else {
                 return ownerCollection.map(x => x.user.username + " | " + x.user.id)
             }
         }
@@ -119,7 +127,7 @@ class Info extends Guild {
         }
     }
 
-    getAllChannelsByName(id, asmsg) {
+    getAllChannelsByName(id, asmsg = Boolean) {
         /**
          * @param {String} id
          * @param {Boolean} asmsg
@@ -147,14 +155,13 @@ class Info extends Guild {
         }
     }
 
-    getAllChannelsByID(id, asmsg) {
+    getAllChannelsByID(id, asmsg = Boolean) {
         /**
          * @param {String} id
          * @param {Boolean} asmsg
          * @type {Collection}
          */
         this.guild = this.client.guilds.get(id);
-
 
         if (!id) {
             throw new Error("Please provide an ID parameter")
@@ -176,7 +183,7 @@ class Info extends Guild {
         }
     }
 
-    getAllChannelsWithTimeout(id, asmsg) {
+    getAllChannelsWithTimeout(id, asmsg = Boolean) {
         /**
          * @param {String} id
          * @param {Boolean} asmsg
@@ -201,12 +208,12 @@ class Info extends Guild {
                     throw new Error("Cannot display 50 values. Please consider console logging the collection")
                 }
 
-                return AllChannelsWithTimeout.map(cl => cl.join("\n"))
+                return AllChannelsWithTimeout.map(cl => cl.join("\n"));
             }
         }
     }
 
-    getAllNSFWChannels(id, asmsg) {
+    getAllNSFWChannels(id, asmsg = Boolean) {
         /**
          * @param {String} id
          * @param {Boolean} asmsg
@@ -237,6 +244,170 @@ class Info extends Guild {
 
             }
         }
+    }
+
+    getAllMembersByUserObject(id) {
+        /**
+         * @param {String} id
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllMembers.set(this.guild.id, this.guild.members.map(x => x.user))
+
+        return AllMembers;
+    }
+
+    getAllMembersByDisplayName(id, asmsg = Boolean) {
+        /**
+         * @param {String} id
+         * @param {Boolean} asmsg
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllMembersByDisplayName.set(this.guild.id, this.guild.members.map(x => x.displayName))
+
+        if (!asmsg || asmsg === false) {
+            return AllMembersByDisplayName.array();
+        } else {
+            return AllMembersByDisplayName.array().map(y => y.join("\n"));
+        }
+    }
+
+    getAllMembersByID(id, asmsg = Boolean) {
+        /**
+         * @param {String} id
+         * @param {Boolean} asmsg
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllMembersByID.set(this.guild.id, this.guild.members.map(x => x.id + " | Display Name: " + x.displayName))
+
+        if (!asmsg || asmsg === false) {
+            return AllMembersByID.array();
+        } else {
+            return AllMembersByID.array().map(x => x.join("\n"));
+        }
+    }
+
+    getAllMemberRoles(id, memberID, asmsg = Boolean) {
+        /**
+         * @param {String} id
+         * @param {String} memberID
+         * @param {Boolean} asmsg
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied")
+        } else if(!memberID) {
+            throw new Error("Please provide a parameter of type string: Member ID not supplied")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the supplied guild id. Please check if the client is in the supplied guild")
+        } else if(!this.client.users.get(id)) {
+            throw new Error("The client was unable to find the supplied member id. Please  check if the client and the member share a server.")
+        }
+
+        AllMemberRoles.set(this.guild.id, this.guild.members.get(memberID).roles)
+
+        if (!asmsg || asmsg === false) {
+            return AllMemberRoles.get(this.guild.id).filter(x => x.name !== "@everyone").map(z => z)
+        } else {
+            return AllMemberRoles.get(this.guild.id).filter(x => x.name !== "@everyone").map(z => "Name" + z.name + " | ID: " + z.id)
+        }
+    }
+
+    getAllGuildRolesByObject(id) {
+        /**
+         * @param {String} id
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllGuildRoles.set(this.guild.id, this.guild.roles.map(x => x));
+
+        return AllGuildRoles;
+    }
+
+    getAllGuildRolesByName(id) {
+        /**
+         * @param {String} id 
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllGuildRolesByName.set(this.guild.id, this.guild.roles.map(x => x));
+
+        return AllGuildRolesByName.get(this.guild.id).filter(x => x.name !== "@everyone").map(z => z.name)
+    }
+
+    getAllGuildRolesByID(id) {
+        /**
+         * @param {String} id 
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllGuildRolesByID.set(this.guild.id, this.guild.roles);
+
+        return AllGuildRolesByID.get(this.guild.id).filter(x => x.name !== "@everyone").map(z => "Name: " + z.name + " | ID: " + z.id)
+    }
+
+    getAllGuildRolesByHexColor(id) {
+        /**
+         * @param {String} id 
+         * @type {Collection}
+         */
+        this.guild = this.client.guilds.get(id);
+
+        if(!id) {
+            throw new Error("Please provide a parameter of type string: Guild ID not supplied.")
+        } else if(!this.client.guilds.get(id)) {
+            throw new Error("The client was unable to find the provided guild id. Please make sure that the client is in the provided guild")
+        }
+
+        AllGuildRolesByHexColor.set(this.guild.id, this.guild.roles);
+
+        return AllGuildRolesByHexColor.get(this.guild.id).filter(x => x.name !== "@everyone").map(z => "Name: " + z.name + " | Hex Color: " + z.hexColor);
     }
 }
 
