@@ -62,13 +62,13 @@ console.log(new Info(client).getOwner("603009265346805760")) //Returns the user 
 
 > getChannelsByType()
 
-```js
+<code class="language-javascript">
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getChannelsByType("603009265346805760")) //Returns an object of each channel without the boolean parameter supplied
-```
+</code>
 <br>
 
 > getAllChannelsByObject()
