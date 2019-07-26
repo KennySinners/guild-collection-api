@@ -51,6 +51,7 @@ console.log(new Info(client).getGuild("603009265346805760")) //Returns the guild
 
 > getOwner()
 
+<code background-color="#eef">
 ```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -58,6 +59,7 @@ const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getOwner("603009265346805760")) //Returns the user object of the owner without the boolean parameter supplied
 ```
+</code>
 <br>
 
 > getChannelsByType()
