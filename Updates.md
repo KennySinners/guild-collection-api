@@ -1,6 +1,6 @@
 ## API Update Notes
 <br><br>
-[x] Includes updates to the API itself (core changes like adding functions, changing functions, etc):
+- [x] Includes updates to the API itself (core changes like adding functions, changing functions, etc)
    - [x] Update includes breaking changes (New functions, modified existing functions, added methods)
    - [x] Updated **doesn't** include breaking changes (Changes to documentation, README, LICENSE, etc)
 <br><br>
@@ -8,10 +8,10 @@
 ### New Changes to the API
 #### Changes include:
 
-[x] Functions involving GuildMember added
-[x] Extended existing functions 
-[x] Replaced some functions by extending existing functions
-[ ] Client properties/methods
+- [x] Functions involving GuildMember added
+- [x] Extended existing functions 
+- [x] Replaced some functions by extending existing functions
+- [ ] Client properties/methods
 <br><br>
 ___
 > New Functions
