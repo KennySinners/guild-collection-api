@@ -2,7 +2,7 @@
 <br><br>
 - [x] Includes updates to the API itself (core changes like adding functions, changing functions, etc)
    - [x] Update includes breaking changes (New functions, modified existing functions, added methods)
-   - [x] Updated **doesn't** include breaking changes (Changes to documentation, README, LICENSE, etc)
+   - [x] Update **doesn't** include breaking changes (Changes to documentation, README, LICENSE, etc)
 <br><br>
    ____ 
 ### New Changes to the API
