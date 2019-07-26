@@ -13,24 +13,46 @@
 
 Object returns |
 ---------------|
-getGuild [x] Boolean (Don't use if object wanted as a return) |
-getOwner [x] Boolean (Don't use if object wanted as a return) |
-getChannelsByType [x] Boolean (Don't use if object wanted as a return) |
-getAllChannelsByObject [ ] Boolean |
-getAllNSFWChannels [x] Boolean (Don't use if object wanted as a return) |
+getGuild 
+- [x] Boolean (Don't use if object wanted as a return) |
+<br>
+getOwner 
+- [x] Boolean (Don't use if object wanted as a return) |
+<br>
+getChannelsByType 
+- [x] Boolean (Don't use if object wanted as a return) |
+<br>
+getAllChannelsByObject 
+- [ ] Boolean |
+<br>
+getAllNSFWChannels 
+- [x] Boolean (Don't use if object wanted as a return) |
 
 
 ##### Functions that return Names/IDs
 
 Name / ID returns |
 ------------------|
-getGuild [x] Boolean (Use if name/id wanted as a return) |
-getOwner [x] Boolean (Use if name/id wanted as a return) |
-getChannelsByType [x] Boolean (Use if name/id wanted as a return) |
-getAllChannelsByName [ ] Boolean |
-getAllChannelsByID [ ] Boolean | 
-getAllChannelsWithTimeout [x] Boolean (Use if name/id wanted as a return) |
-getAllNSFWChannels [x] Boolean (Use if name/id wanted as a return) |
+getGuild 
+- [x] Boolean (Use if name/id wanted as a return) |
+<br>
+getOwner 
+- [x] Boolean (Use if name/id wanted as a return) |
+<br>
+getChannelsByType 
+- [x] Boolean (Use if name/id wanted as a return) |
+<br>
+getAllChannelsByName 
+- [ ] Boolean |
+<br>
+getAllChannelsByID 
+- [ ] Boolean | 
+<br>
+getAllChannelsWithTimeout 
+- [x] Boolean (Use if name/id wanted as a return) |
+<br>
+getAllNSFWChannels 
+- [x] Boolean (Use if name/id wanted as a return) |
 
 
 
