@@ -40,176 +40,176 @@ getAllNSFWChannels | <ul><li>[x] Boolean (Use if name/id wanted as a return)</li
 
 > getGuild()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getGuild("603009265346805760")) //Returns the guild object without the boolean parameter supplied
-</code>
+```
 <br>
 
 > getOwner()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getOwner("603009265346805760")) //Returns the user object of the owner without the boolean parameter supplied
-</code>
+```
 <br>
 
 > getChannelsByType()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getChannelsByType("603009265346805760")) //Returns an object of each channel without the boolean parameter supplied
-</code>
+```
 <br>
 
 > getAllChannelsByObject()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllChannelsByObject("603009265346805760")) //Returns an object of each channel in the guild. Boolean isn't a viable parameter here
-</code>
+```
 <br>
 
 > getAllChannelsByName()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllChannelsByName("603009265346805760")) //Returns all channels in the guild by their name. Boolean isn't a viable parameter here
-</code>
+```
 <br>
 
 > getAllChannelsByID
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllChannelsByID("603009265346805760")) //Returns all channels in the guild by their ID. Boolean isn't a viable parameter here
-</code>
+```
 <br>
 
 > getAllChannelsWithTimeout()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllChannelsWithTimeout("603009265346805760")) //Returns all channels that have a timeout, returns the object of each channel with no boolean parameter supplied
-</code>
+```
 <br>
 
 > getAllNSFWChannels()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllNSFWChannels("603009265346805760")) //Returns all nsfw channels returns the object of each channel with no boolean parameter supplied
-</code>
+```
 <br>
 
 > getAllMembersByUserObject()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllMembersByUserObject("603009265346805760"))
  //Returns a user object for each member in the guild
-</code>
+```
 <br>
 
 > getAllMembersByDisplayName()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllMembersByDisplayName("603009265346805760")) //Returns a map of all members in the guild by their display name
-</code>
+```
 <br>
 
 > getAllMembersByID()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllMembersByID("603009265346805760")) //Returns a map of all members in the guild by their ID and display name depending on if there was a boolean parameter supplied
-</code>
+```
 <br>
 
 > getAllMemberRoles()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllMemberRoles("603009265346805760", "575108662457139201")) //Returns a map of all the member's roles by the role names + role ids depending on if there was a boolean parameter supplied
-</code>
+```
 <br>
 
 > getAllGuildRolesByObject()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllGuildRolesByObject("603009265346805760")) //Returns a map of every role in the guild by it's Role Object
-</code>
+```
 <br>
 
 > getAllGuildRolesByName()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllGuildRolesByName("603009265346805760")) //Returns a map of all the roles in the guild by their name
-</code>
+```
 <br>
 
 > getAllGuildRolesByID()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllGuildRolesByID("603009265346805760")) //Returns a map of all the roles in the guild by their ID
-</code>
+```
 <br>
 
 > getAllGuildRolesByHexColor()
 
-<code class="language-javascript">
+```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { Info } = require("guild-collection-api");
 
 console.log(new Info(client).getAllGuildRolesByHexColor("603009265346805760")) //Returns a map of all the roles in the guild by their name + hex color
-</code>
+```
